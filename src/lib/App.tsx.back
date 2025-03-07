@@ -1,0 +1,221 @@
+import { ArrowRight, Bookmark, Code, Database, Facebook, Github, Globe, Heart, Languages, Linkedin, Mail, MoreVertical, PanelBottom, Plus, Server } from "lucide-react"
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+} from "@/components/ui/navigation-menu"
+import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu"
+
+import { Link } from "@radix-ui/react-navigation-menu"
+import { cn } from "./lib/utils"
+import { Button } from "./components/ui/button"
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Contact from './Contact';
+
+function App() {
+
+  return (
+    <BrowserRouter>
+      <div className="w-full h-screen">
+        <header className="z-50 fixed left-0 top-0 bg-black h-[50px] w-[100vw]">
+          <div className="h-[100%] w-[100%] flex justify-between items-center">
+            <div className="w-[48px] h-[48px] flex justify-center items-center">
+              <Bookmark className="stroke-2 text-white" />
+            </div>
+            <nav className="mx-8 h-[100%] w-[100%] flex items-center justify-between">
+              <div></div>
+              <NavigationMenu>
+                <NavigationMenuList>
+                  <Link href="/" legacyBehavior passHref>
+                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-white bg-black")}>
+                      Home
+                    </NavigationMenuLink>
+                  </Link>
+                  <Link href="#Resume" legacyBehavior passHref>
+                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-white bg-black")}>
+                      Resume
+                    </NavigationMenuLink>
+                  </Link>
+                  <Link href="#Skills" legacyBehavior passHref>
+                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-white bg-black")}>
+                      Skills
+                    </NavigationMenuLink>
+                  </Link>
+                  <Link href="/Contact" legacyBehavior passHref>
+                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-white bg-black")}>
+                      Contact
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuList>
+              </NavigationMenu>
+
+            </nav>
+          </div>
+        </header>
+
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <div>
+                <div className="">
+                  <div className=" flex flex-cols bg-[#0A0A0A] h-[100vh]">
+                    <div className="w-[40%] mx-[50px] my-[150px]">
+                      <h2 className="text-[#DB2B2B] text-[30px] font-bold">Hello, my name is </h2>
+                      <h1 className="text-white font-bold text-[40px] "> RAZAFINDRAKOTO Fenosoa Njivaniaina</h1>
+                      <span className="text-[#A7A5A5] text-[22px] ">
+                        System Administrator and web developer ( back-end and front-end)
+                      </span>
+                      <div className="w-[50%]  flex flex-cols justify-between my-[30px]">
+                        <Button className="bg-[#EA2727]">Contact me</Button>
+                        <a href="./CV.pdf">
+                          <Button className="bg-[#EA2727]">View CV</Button>
+                        </a>
+
+                      </div>
+                    </div>
+
+                    <div className="w-[50%] mx-[50px] my-[100px] flex justify-between">
+                      <div></div>
+                      <div className=" w-[374px] h-[366px] bg-gradient-to-b from-[#EA2727] to-[#000000]">
+                        <img src="me.png" alt="Image" className="" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div id="Resume" className="h-[100vh] flex flex-cols bg-[#0D0E0C]">
+                    <div className="mx-[50px] my-[150px]">
+                      <div className=" w-[374px] h-[366px] bg-gradient-to-b from-[#EA2727] to-[#000000]">
+                        <img src="developer.png" alt="Image" className="" />
+                      </div>
+                    </div>
+
+                    <div className="mx-[50px] my-[150px]">
+                      <h2 className="text-white text-[30px] font-bold">About me </h2>
+                      <h1 className="text-white font-bold text-[40px] "> Who am I ?</h1>
+                      <span className="text-[#A7A5A5] text-[15px] ">
+                        Student in computer science school of the University of Antananarivo <br />
+                        at MISA in license 3,System and network administrator in computer <br />
+                        science: swimming, different network service (DHCP, iptables). <br />
+                        Also website  developer with react, next,
+                        php(codeigniter), tailwind, html and css.<br />
+                        My training:<br />
+                        - In 2023: Licence 1 in IT<br />
+                        - In 2024: Bachelor's degree 2 in  IT<br />
+                        - In 2025: Licence 3 in MISA (in progress now)<br />
+                      </span>
+                      <div className="flex flex-cols justify-between my-[30px] bg-black p-[10px] w-[375px] rounded-sm">
+                        <Button className="bg-[#171717]">
+                          <Github /> GitHub
+                        </Button>
+                        <Button className="bg-[#171717]">
+                          <Mail /> E-mail
+                        </Button>
+                        <Button className="bg-[#171717]">
+                          <Linkedin /> Linkedin
+                        </Button>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <div id="Skills" className="h-[100vh] flex flex-cols bg-[#0A0A0B]">
+                    <div className="w-[100%] mx-[100px] my-[100px] ">
+                      <h2 className="text-white text-[30px] font-bold">My skills</h2>
+                      <h1 className="text-white font-bold text-[40px] "> What I can do ?</h1>
+                      <div className="text-white flex flex-wrap items-center justify-between w-[100%]">
+                        <div className=" flex flex-col items-center justify-center p-[10px] my-[10px] w-[300px] h-[150px] bg-[#434242] rounded-lg">
+                          <Globe className="w-[35px] h-[35px] text-[#EA2727] stroke-2" />
+                          <h3 className="pb-[10px] ">Language</h3>
+                          <span className="text-[#A7A5A5]">English, French, Malagasy</span>
+                        </div>
+                        <div className=" flex flex-col items-center justify-center p-[10px] my-[10px] w-[300px] h-[150px] bg-[#434242] rounded-lg">
+                          <Code className="w-[35px] h-[35px] text-[#EA2727] stroke-2" />
+                          <h3 className="pb-[10px] ">Language of programmation</h3>
+                          <span className="text-[#A7A5A5] text-center">C, C++, PHP , JavaScript,<br /> Bash,Python, java</span>
+                        </div>
+                        <div className=" flex flex-col items-center justify-center p-[10px] my-[10px] w-[300px] h-[150px] bg-[#434242] rounded-lg">
+                          <Database className="w-[35px] h-[35px] text-[#EA2727] stroke-2" />
+                          <h3 className="pb-[10px] ">Database</h3>
+                          <span className="text-[#A7A5A5] text-center">Database merise, Mysql,<br /> postegresql</span>
+                        </div>
+                        <div className=" flex flex-col items-center justify-center p-[10px] my-[10px] w-[300px] h-[150px] bg-[#434242] rounded-lg">
+                          <Server className="w-[35px] h-[35px] text-[#EA2727] stroke-2" />
+                          <h3 className="pb-[10px] ">Service</h3>
+                          <span className="text-[#A7A5A5] text-center">Apache, ssh, nginx, DNS,<br /> asterisk, DHCP, NIS, NFS,<br /> samba</span>
+                        </div>
+                        <div className=" flex flex-col items-center justify-center p-[10px] my-[10px] w-[300px] h-[150px] bg-[#434242] rounded-lg">
+                          <Heart className="w-[35px] h-[35px] text-[#EA2727] stroke-2" />
+                          <h3 className="pb-[10px] ">Hobbies</h3>
+                          <span className="text-[#A7A5A5] text-center">Video game, Guitare</span>
+                        </div>
+                        <div className=" flex flex-col items-center justify-center p-[10px] my-[10px] w-[300px] h-[150px] bg-[#434242] rounded-lg">
+                          <Plus className="w-[35px] h-[35px] text-[#EA2727] stroke-2" />
+                          <h3 className="mb-[30px] ">Project</h3>
+                          <Button>View all</Button>
+                        </div>
+                      </div >
+                    </div>
+                  </div>
+
+                  <div className="h-[30vh]  flex flex-cols justify-between items-center text-white p-[50px] bg-[#0A0A0A]">
+                    <div className="flex flex-row">
+                      <div>
+                        <h1 className="font-bold text-[30px]">We can work together if you want, please, just contact me.</h1>
+                        <h2 className="text-[#A7A5A5]">"Strength in unity"</h2>
+                      </div>
+                    </div>
+                    <div>
+                      <Button className="bg-[#EA2727]">Contact me</Button>
+                    </div>
+                  </div>
+                </div>
+
+                <footer className="z-50 bg-black h-[50px]">
+                  <div className="h-[100%] w-[100%] flex justify-between items-center">
+                    <div className="w-[48px] h-[48px] flex justify-center items-center">
+                      <Bookmark className=" fill-white stroke-2 text-white" />
+                    </div>
+                    <nav className="mx-8 h-[100%] w-[100%] flex items-center justify-between">
+                      <div></div>
+                      <NavigationMenu>
+                        <NavigationMenuList>
+                          <Link href="/" legacyBehavior passHref>
+                            <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-white bg-black")}>
+                              <Mail className="w-[30px] h-[30px]" />
+                            </NavigationMenuLink>
+                          </Link>
+                          <Link href="#Resume" legacyBehavior passHref>
+                            <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-white bg-black")}>
+                              <Facebook className="w-[30px] h-[30px]" />
+                            </NavigationMenuLink>
+                          </Link>
+                          <Link href="#Skills" legacyBehavior passHref>
+                            <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-white bg-black")}>
+                              <Linkedin className="w-[30px] h-[30px]" />
+                            </NavigationMenuLink>
+                          </Link>
+                        </NavigationMenuList>
+                      </NavigationMenu>
+
+                    </nav>
+                  </div>
+                </footer>
+              </div>
+            }
+          />
+          <Route path="/Contact" element={<Contact />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
+
+  )
+}
+
+export default App
