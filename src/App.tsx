@@ -48,7 +48,7 @@ function Layout({ children }: { children: ReactNode }) {
                 Skills
               </Link>
               <Link
-                to="/Contact"
+                to="/contact"
                 className="px-[10px] py-[6px] rounded-lg hover:bg-gray-900 "
               >
                 Contact
@@ -97,12 +97,15 @@ function App() {
                         front-end)
                       </span>
                       <div className="flex flex-col sm:flex-row gap-4 mt-6">
-                        <a href="/Contact">
+                        <a href="https://njivaniaina.github.io/contact">
                           <Button className="bg-[#EA2727] text-white w-full sm:w-auto">
                             Contact-me
                           </Button>
                         </a>
-                        <a href="./CV.pdf" className="w-full sm:w-auto">
+                        <a
+                          href="/CV.pdf"
+                          className="w-full sm:w-auto"
+                        >
                           <Button className="bg-[#EA2727] text-white w-full">
                             View CV
                           </Button>
@@ -112,7 +115,7 @@ function App() {
                     <div className="md:w-1/2 flex justify-center">
                       <div className="w-full max-w-[374px] aspect-[374/366] bg-gradient-to-b from-[#EA2727] to-[#000000] overflow-hidden">
                         <img
-                          src="me.png"
+                          src="/me.png"
                           alt="Image"
                           className="w-full h-full object-cover"
                         />
@@ -129,7 +132,7 @@ function App() {
                     <div className="md:w-1/2 mb-8 md:mb-0 flex justify-center">
                       <div className="w-full max-w-[374px] aspect-[374/366] bg-gradient-to-b from-[#EA2727] to-[#000000] overflow-hidden">
                         <img
-                          src="developer.png"
+                          src="/developer.png"
                           alt="Image"
                           className="w-full h-full object-cover"
                         />
@@ -250,7 +253,7 @@ function App() {
                         "Strength in unity"
                       </h2>
                     </div>
-                    <a href="/Contact">
+                    <a href="/contact">
                       <Button className="bg-[#EA2727] text-white w-full md:w-auto">
                         Contact me
                       </Button>
@@ -296,7 +299,10 @@ function App() {
             path="/project"
             element={<ProjectTable projects={projects} />}
           />
-          <Route path="/Contact" element={<Contact />} />
+          <Route
+            path="/contact"
+            element={<Contact />}
+          />
         </Routes>
       </Layout>
     </BrowserRouter>
