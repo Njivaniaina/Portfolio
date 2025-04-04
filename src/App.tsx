@@ -30,25 +30,25 @@ function Layout({ children }: { children: ReactNode }) {
             <div></div>
             <div>
               <Link
-                to="/"
+                to="/portfolio"
                 className="px-[10px] py-[6px] rounded-lg hover:bg-gray-900 "
               >
                 Home
               </Link>
               <Link
-                to="/#Resume"
+                to="/portfolio/#Resume"
                 className="px-[10px] py-[6px] rounded-lg hover:bg-gray-900 "
               >
                 Resume
               </Link>
               <Link
-                to="/#Skills"
+                to="/portfolio/#Skills"
                 className="px-[10px] py-[6px] rounded-lg hover:bg-gray-900 "
               >
                 Skills
               </Link>
               <Link
-                to="/contact"
+                to="/portfolio/contact"
                 className="px-[10px] py-[6px] rounded-lg hover:bg-gray-900 "
               >
                 Contact
@@ -80,7 +80,7 @@ function App() {
       <Layout>
         <Routes>
           <Route
-            path="/"
+            path="/portfolio"
             element={
               <div>
                 <section className="bg-[#0A0A0A] min-h-screen flex items-center justify-center p-4 sm:p-8 md:p-12 lg:p-16">
