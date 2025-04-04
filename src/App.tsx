@@ -97,13 +97,13 @@ function App() {
                         front-end)
                       </span>
                       <div className="flex flex-col sm:flex-row gap-4 mt-6">
-                        <a href="https://njivaniaina.github.io/contact">
+                        <a href="/portfolio/contact">
                           <Button className="bg-[#EA2727] text-white w-full sm:w-auto">
                             Contact-me
                           </Button>
                         </a>
                         <a
-                          href="/CV.pdf"
+                          href="/portfolio/CV.pdf"
                           className="w-full sm:w-auto"
                         >
                           <Button className="bg-[#EA2727] text-white w-full">
@@ -115,7 +115,7 @@ function App() {
                     <div className="md:w-1/2 flex justify-center">
                       <div className="w-full max-w-[374px] aspect-[374/366] bg-gradient-to-b from-[#EA2727] to-[#000000] overflow-hidden">
                         <img
-                          src="/me.png"
+                          src="/portfolio/me.png"
                           alt="Image"
                           className="w-full h-full object-cover"
                         />
@@ -132,7 +132,7 @@ function App() {
                     <div className="md:w-1/2 mb-8 md:mb-0 flex justify-center">
                       <div className="w-full max-w-[374px] aspect-[374/366] bg-gradient-to-b from-[#EA2727] to-[#000000] overflow-hidden">
                         <img
-                          src="/developer.png"
+                          src="/portfolio/developer.png"
                           alt="Image"
                           className="w-full h-full object-cover"
                         />
@@ -234,7 +234,7 @@ function App() {
                       <div className="flex flex-col items-center justify-center p-4 bg-[#434242] rounded-lg">
                         <Plus className="w-8 h-8 text-[#EA2727] mb-2" />
                         <h3 className="text-lg font-semibold mb-2">Projects</h3>
-                        <a href="/project">
+                        <a href="/portfolio/project">
                           <Button className="w-full">View all</Button>
                         </a>
                       </div>
@@ -253,7 +253,7 @@ function App() {
                         "Strength in unity"
                       </h2>
                     </div>
-                    <a href="/contact">
+                    <a href="/portfolio/contact">
                       <Button className="bg-[#EA2727] text-white w-full md:w-auto">
                         Contact me
                       </Button>
@@ -296,11 +296,11 @@ function App() {
           />
 
           <Route
-            path="/project"
+            path="/portfolio/project"
             element={<ProjectTable projects={projects} />}
           />
           <Route
-            path="/contact"
+            path="/portfolio/contact"
             element={<Contact />}
           />
         </Routes>
