@@ -18,12 +18,11 @@ const Hero = () => {
           </div>
           
           <h1 className="hero-title">
-            Full Stack <span>Developer</span> <br />
-            & DevOps Enthusiast
+            Full Stack <span>Developer</span> & DevOps Enthusiast
           </h1>
           
           <p className="hero-subtitle">
-            I craft end-to-end web applications and reliable infrastructures. From modern React frontends to robust Larvel/Django backends and CI/CD pipelines.
+            I craft end-to-end web applications and reliable infrastructures. From modern React frontends to robust Laravel/Django backends and CI/CD pipelines.
           </p>
           
           <div className="hero-actions">

@@ -13,7 +13,7 @@
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100%, 1fr)); /* Use 100% instead of fixed 340px to prevent overflow on devices < 340px */
   gap: 2.5rem;
 }
 
@@ -152,5 +152,22 @@
   }
   .project-title {
     font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .project-content {
+    padding: 1rem;
+  }
+  .project-title {
+    font-size: 1.1rem;
+    word-break: break-word;
+  }
+  .project-description {
+    font-size: 0.85rem;
+  }
+  .tag {
+    font-size: 0.65rem;
+    padding: 0.3rem 0.6rem;
   }
 }

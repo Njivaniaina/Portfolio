@@ -134,3 +134,16 @@ img {
   }
 }
 
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .section-title {
+    font-size: 1.5rem;
+    word-break: break-word; /* Prevents long words from overflowing */
+  }
+}
+
