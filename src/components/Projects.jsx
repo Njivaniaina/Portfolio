@@ -10,7 +10,7 @@ const projectsData = [
     image: '/projects/biblio.png',
     tags: ['Web Development', 'Digital Library', 'Archives'],
     liveUrl: 'http://biblio.univ-antananarivo.mg/fonds-patrimoniaux',
-    githubUrl: '#'
+    githubUrl: 'https://github.com/Njivaniaina/'
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const projectsData = [
     image: '/projects/misa.png',
     tags: ['SysAdmin', 'Networking', 'Infrastructure', 'Security'],
     liveUrl: '#',
-    githubUrl: '#'
+    githubUrl: 'https://github.com/Njivaniaina/'
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ const projectsData = [
     image: '/projects/siansa.png',
     tags: ['DevOps', 'Backup System', 'Data Security'],
     liveUrl: 'https://siansa.univ-antananarivo.mg/',
-    githubUrl: '#'
+    githubUrl: 'https://github.com/Njivaniaina/'
   }
 ];
 
