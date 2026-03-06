@@ -22,7 +22,7 @@ main {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+  background: var(--accent-blue);
   color: white;
   box-shadow: 0 4px 15px var(--accent-glow);
 }
@@ -35,20 +35,20 @@ main {
 
 .btn-outline {
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--border-color);
   color: var(--text-primary);
 }
 
 .btn-outline:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.4);
+  background: var(--glass-border);
+  border-color: var(--text-secondary);
 }
 
 /* Glassmorphism Classes */
 .glass-panel {
-  background: rgba(13, 17, 23, 0.6);
+  background: var(--glass-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
   border-radius: var(--border-radius-lg);
 }

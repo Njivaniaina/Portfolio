@@ -66,7 +66,7 @@ a.detail-value:hover {
 .contact-form-container {
   padding: 3rem;
   border-radius: var(--border-radius-lg);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 25px 50px -12px var(--card-shadow);
 }
 
 .contact-form {
@@ -91,8 +91,8 @@ a.detail-value:hover {
 .form-group textarea {
   width: 100%;
   padding: 1rem 1.25rem;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
   border-radius: var(--border-radius-sm);
   color: var(--text-primary);
   font-family: var(--font-sans);
@@ -104,13 +104,13 @@ a.detail-value:hover {
 .form-group textarea:focus {
   outline: none;
   border-color: var(--accent-blue);
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+  background: var(--bg-primary);
+  box-shadow: 0 0 0 4px var(--accent-glow);
 }
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: rgba(255, 255, 255, 0.2);
+  color: var(--text-secondary);
 }
 
 .form-group textarea {
