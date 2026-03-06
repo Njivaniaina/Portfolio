@@ -5,29 +5,29 @@ import './Projects.css';
 const projectsData = [
   {
     id: 1,
-    title: 'E-Commerce Platform',
-    description: 'A full-stack e-commerce solution with modern UI, seamless payment integration, and a dedicated admin panel for product management.',
-    image: 'https://images.unsplash.com/photo-1557821552-17105153ce67?auto=format&fit=crop&q=80&w=800',
-    tags: ['React', 'Node.js', 'Stripe', 'Tailwind'],
-    liveUrl: '#',
+    title: 'Fonds Patrimoniaux - Digital Library',
+    description: "Development of the digital library platform for the University of Antananarivo's Heritage Funds (Fonds Patrimoniaux).",
+    image: '/projects/biblio.png',
+    tags: ['Web Development', 'Digital Library', 'Archives'],
+    liveUrl: 'http://biblio.univ-antananarivo.mg/fonds-patrimoniaux',
     githubUrl: '#'
   },
   {
     id: 2,
-    title: 'Financial Dashboard',
-    description: 'Real-time financial analytics dashboard providing insightful data visualizations and portfolio management tools.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800',
-    tags: ['Vite', 'React', 'Chart.js', 'Firebase'],
+    title: 'Network Administration - MISA',
+    description: 'Network Administrator at MISA (Mathématiques, Informatique et Statistiques Appliquées), University of Antananarivo. Managed IT infrastructure and network security.',
+    image: '/projects/misa.png',
+    tags: ['SysAdmin', 'Networking', 'Infrastructure', 'Security'],
     liveUrl: '#',
     githubUrl: '#'
   },
   {
     id: 3,
-    title: 'AI Content Generator',
-    description: 'An AI-powered tool that helps marketers generate SEO-optimized content briefs and blog posts in seconds.',
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800',
-    tags: ['React', 'OpenAI', 'CSS Modules'],
-    liveUrl: '#',
+    title: 'Science Faculty - Backup System',
+    description: 'Contributed to the development of an automated and secure backup system for the Faculty of Sciences (Siansa) website, ensuring data integrity.',
+    image: '/projects/siansa.png',
+    tags: ['DevOps', 'Backup System', 'Data Security'],
+    liveUrl: 'https://siansa.univ-antananarivo.mg/',
     githubUrl: '#'
   }
 ];
