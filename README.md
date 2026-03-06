@@ -1,16 +1,43 @@
-# React + Vite
+# MiniDev | Full Stack Developer & DevOps Enthusiast Portfolio
+
+Welcome to the source code of my personal portfolio! This project is built using React and Vite, showcasing my skills, projects, and contact information.
+
+## 👨‍💻 About Me
+
+Hello! I'm **Fenosoa Njivaniaina Razafindrakoto** (aka MiniDev), a Full Stack Developer & DevOps Enthusiast based in Antananarivo, Madagascar. 
+I craft end-to-end web applications and reliable infrastructures, working with modern React frontends, robust Laravel/Django backends, and CI/CD pipelines.
+
+## 🛠️ Tech Stack & Skills
+
+- **Frontend:** React, NextJS, Vite, Tailwind CSS, CSS Modules
+- **Backend:** Node.js, Laravel, Django
+- **DevOps & Other:** Docker, Firebase, OpenAI API, Stripe Integration
+
+## 🚀 Featured Projects
+
+Here are some of the projects highlighted in my portfolio:
+1. **E-Commerce Platform:** A full-stack solution with modern UI, payment integration (Stripe), and admin panel. (React, Node.js, Tailwind)
+2. **Financial Dashboard:** Real-time financial analytics dashboard with data visualizations. (Vite, React, Chart.js, Firebase)
+3. **AI Content Generator:** AI-powered tool for marketing content generation. (React, OpenAI, CSS Modules)
+
+## 📬 Contact & Socials
+
+- **Email:** [fenosoanjivaniaina@gmail.com](mailto:fenosoanjivaniaina@gmail.com)
+- **LinkedIn:** [razafindrakoto-fenosoa-njivaniaina](https://www.linkedin.com/in/razafindrakoto-fenosoa-njivaniaina)
+- **GitHub:** [Njivaniaina](https://github.com/Njivaniaina)
+- **Location:** Antananarivo, Madagascar
+
+## ⚙️ Running the Project Locally
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+```bash
+# Install dependencies
+npm install
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Start the development server
+npm run dev
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Build for production
+npm run build
+```
