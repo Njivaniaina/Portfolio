@@ -1,8 +1,37 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { Mail, MapPin, Send } from 'lucide-react';
 import './Contact.css';
 
 const Contact = () => {
+  const form = useRef();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    emailjs
+      .sendForm('service_o9wjl9u', 'template_voltgpa', form.current, {
+        publicKey: 'cNVfVxJ0CbyDDCrct',
+      })
+      .then(
+        () => {
+          setIsSubmitting(false);
+          setSubmitStatus('success');
+          form.current.reset();
+          setTimeout(() => setSubmitStatus(null), 5000);
+        },
+        (error) => {
+          setIsSubmitting(false);
+          setSubmitStatus('error');
+          console.log('FAILED...', error.text);
+        },
+      );
+  };
+
   return (
     <section id="contact" className="section contact">
       <div className="container">
@@ -37,25 +66,36 @@ const Contact = () => {
           </div>
           
           <div className="contact-form-container glass-panel">
-            <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+            <form ref={form} className="contact-form" onSubmit={sendEmail}>
               <div className="form-group">
                 <label htmlFor="name">Full Name</label>
-                <input type="text" id="name" placeholder="John Doe" required />
+                <input type="text" id="name" name="user_name" placeholder="John Doe" required />
               </div>
               
               <div className="form-group">
                 <label htmlFor="email">Email Address</label>
-                <input type="email" id="email" placeholder="john@example.com" required />
+                <input type="email" id="email" name="user_email" placeholder="john@example.com" required />
               </div>
               
               <div className="form-group">
                 <label htmlFor="message">Message</label>
-                <textarea id="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
               </div>
               
-              <button type="submit" className="btn btn-primary submit-btn">
-                Send Message <Send size={18} />
+              <button type="submit" className="btn btn-primary submit-btn" disabled={isSubmitting}>
+                {isSubmitting ? 'Sending...' : <>Send Message <Send size={18} /></>}
               </button>
+
+              {submitStatus === 'success' && (
+                <p style={{ color: '#4ade80', marginTop: '1rem', textAlign: 'center' }}>
+                  Message sent successfully!
+                </p>
+              )}
+              {submitStatus === 'error' && (
+                <p style={{ color: '#f87171', marginTop: '1rem', textAlign: 'center' }}>
+                  Failed to send message. Please try again.
+                </p>
+              )}
             </form>
           </div>
         </div>
