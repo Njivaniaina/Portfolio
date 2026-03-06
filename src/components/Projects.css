@@ -145,3 +145,12 @@
     margin: 0 auto;
   }
 }
+
+@media (max-width: 480px) {
+  .project-content {
+    padding: 1.25rem;
+  }
+  .project-title {
+    font-size: 1.25rem;
+  }
+}
