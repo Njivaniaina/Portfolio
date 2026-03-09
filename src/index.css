@@ -1,23 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 :root, [data-theme="dark"] {
-  /* Color Palette - Dark Theme (Default) */
-  --bg-primary: #0d1117;
-  --bg-secondary: #161b22;
-  --bg-accent: #21262d;
+  /* Color Palette - Dark Theme (Default) - Violet Magenta & Black */
+  --bg-primary: #0a0510; 
+  --bg-secondary: #160d25;
+  --bg-accent: #25163d;
   
-  --text-primary: #e6edf3;
-  --text-secondary: #8b949e;
+  --text-primary: #f5f0ff;
+  --text-secondary: #b19dd1;
   
-  --accent-blue: #2f81f7;
-  --accent-purple: #3fb950;
-  --accent-glow: rgba(63, 185, 80, 0.15);
+  --accent-blue: #b40ab1; /* The exact color you requested */
+  --accent-purple: #f87ef5; /* Lighter variant for gradients */
+  --accent-glow: rgba(180, 10, 177, 0.25);
 
   /* Semantic UI Colors */
-  --border-color: rgba(255, 255, 255, 0.1);
-  --glass-bg: rgba(13, 17, 23, 0.6);
-  --glass-border: rgba(255, 255, 255, 0.05);
-  --card-shadow: rgba(0, 0, 0, 0.4);
+  --border-color: rgba(180, 10, 177, 0.3);
+  --glass-bg: rgba(10, 5, 16, 0.7);
+  --glass-border: rgba(180, 10, 177, 0.2);
+  --card-shadow: rgba(0, 0, 0, 0.6);
   
   /* Typography */
   --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -37,23 +37,23 @@
 }
 
 [data-theme="light"] {
-  /* Color Palette - Light Theme */
+  /* Color Palette - Light Theme - Violet Magenta & White */
   --bg-primary: #ffffff;
-  --bg-secondary: #f6f8fa;
-  --bg-accent: #eaeef2;
+  --bg-secondary: #fffaff;
+  --bg-accent: #fdf0fd;
   
-  --text-primary: #1f2328;
-  --text-secondary: #656d76;
+  --text-primary: #1a0b2e;
+  --text-secondary: #754a74;
   
-  --accent-blue: #0969da;
-  --accent-purple: #1a7f37;
-  --accent-glow: rgba(9, 105, 218, 0.15);
+  --accent-blue: #b40ab1; 
+  --accent-purple: #d946d6;
+  --accent-glow: rgba(180, 10, 177, 0.15);
 
   /* Semantic UI Colors */
-  --border-color: rgba(31, 35, 40, 0.15);
-  --glass-bg: rgba(255, 255, 255, 0.8);
-  --glass-border: rgba(31, 35, 40, 0.1);
-  --card-shadow: rgba(31, 35, 40, 0.15);
+  --border-color: rgba(180, 10, 177, 0.2);
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(180, 10, 177, 0.15);
+  --card-shadow: rgba(26, 11, 46, 0.08);
 }
 
 * {

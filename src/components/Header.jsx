@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Github, Linkedin, Sun, Moon } from 'lucide-react';
+import { Menu, X, Github, Linkedin, MessageCircle, Sun, Moon } from 'lucide-react';
 import './Header.css';
 
 const Header = ({ theme, toggleTheme }) => {
@@ -40,8 +40,11 @@ const Header = ({ theme, toggleTheme }) => {
             <a href="https://github.com/Njivaniaina" target="_blank" rel="noreferrer" className="social-icon">
               <Github size={20} />
             </a>
-            <a href="https://www.linkedin.com/in/razafindrakoto-fenosoa-njivaniaina" target="_blank" rel="noreferrer" className="social-icon">
+            <a href="https://www.linkedin.com/in/fenosoa-njivaniaina-razafindrakoto-a26206316?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BWBm%2FhIQFR4aIJ5QhAxnO0A%3D%3D" target="_blank" rel="noreferrer" className="social-icon">
               <Linkedin size={20} />
+            </a>
+            <a href="https://wa.me/261327105201" target="_blank" rel="noreferrer" className="social-icon">
+              <MessageCircle size={20} />
             </a>
           </div>
         </nav>

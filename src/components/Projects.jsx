@@ -18,7 +18,7 @@ const projectsData = [
     description: 'Network Administrator at MISA (Mathématiques, Informatique et Statistiques Appliquées), University of Antananarivo. Managed IT infrastructure and network security.',
     image: '/projects/misa.png',
     tags: ['SysAdmin', 'Networking', 'Infrastructure', 'Security'],
-    liveUrl: '#',
+    liveUrl: 'https://github.com/Njivaniaina/',
     githubUrl: 'https://github.com/Njivaniaina/'
   },
   {

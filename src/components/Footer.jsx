@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Twitter, Heart } from 'lucide-react';
+import { Github, Linkedin, MessageCircle, Heart } from 'lucide-react';
 import './Footer.css';
 
 const Footer = () => {
@@ -23,11 +23,11 @@ const Footer = () => {
               <a href="https://github.com/Njivaniaina" target="_blank" rel="noreferrer" className="social-icon" aria-label="GitHub">
                 <Github size={20} />
               </a>
-              <a href="https://www.linkedin.com/in/razafindrakoto-fenosoa-njivaniaina" target="_blank" rel="noreferrer" className="social-icon" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/fenosoa-njivaniaina-razafindrakoto-a26206316?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BWBm%2FhIQFR4aIJ5QhAxnO0A%3D%3D" target="_blank" rel="noreferrer" className="social-icon" aria-label="LinkedIn">
                 <Linkedin size={20} />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noreferrer" className="social-icon" aria-label="Twitter">
-                <Twitter size={20} />
+              <a href="https://wa.me/261327105201" target="_blank" rel="noreferrer" className="social-icon" aria-label="WhatsApp">
+                <MessageCircle size={20} />
               </a>
             </div>
           </div>
