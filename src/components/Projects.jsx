@@ -43,6 +43,16 @@ const projectsData = [
     liveUrl: "https://github.com/Njivaniaina/e-car",
     githubUrl: "https://github.com/Njivaniaina/e-car",
   },
+  {
+    id: 5,
+    title: "Mini-Tech - E-Commerce Parts",
+    description:
+      "E-commerce platform for selling electronic parts, developed with Symfony. Features product management, cart, and checkout.",
+    image: "/projects/mini-tech.png",
+    tags: ["Symfony", "E-Commerce", "PHP", "Web Development"],
+    liveUrl: "https://github.com/Njivaniaina/mini-tech",
+    githubUrl: "https://github.com/Njivaniaina/mini-tech",
+  },
 ];
 
 const Projects = () => {
