@@ -7,27 +7,26 @@ const Header = ({ theme, toggleTheme }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
+    { name: 'Home',     href: '#home' },
     { name: 'Projects', href: '#projects' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Contact',  href: '#contact' },
   ];
 
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container header-content">
+        {/* Logo */}
         <a href="#home" className="logo">
           Mini<span>Dev</span>
         </a>
 
-        {/* Desktop Nav */}
+        {/* Desktop Navigation */}
         <nav className="desktop-nav">
           <ul className="nav-list">
             {navLinks.map((link) => (
@@ -36,35 +35,34 @@ const Header = ({ theme, toggleTheme }) => {
               </li>
             ))}
           </ul>
+
           <div className="social-links">
-            <a href="https://github.com/Njivaniaina" target="_blank" rel="noreferrer" className="social-icon">
-              <Github size={20} />
+            <a href="https://github.com/Njivaniaina" target="_blank" rel="noreferrer" className="social-icon" aria-label="GitHub">
+              <Github size={18} />
             </a>
-            <a href="https://www.linkedin.com/in/fenosoa-njivaniaina-razafindrakoto-a26206316?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BWBm%2FhIQFR4aIJ5QhAxnO0A%3D%3D" target="_blank" rel="noreferrer" className="social-icon">
-              <Linkedin size={20} />
+            <a href="https://www.linkedin.com/in/fenosoa-njivaniaina-razafindrakoto-a26206316" target="_blank" rel="noreferrer" className="social-icon" aria-label="LinkedIn">
+              <Linkedin size={18} />
             </a>
-            <a href="https://wa.me/261327105201" target="_blank" rel="noreferrer" className="social-icon">
-              <MessageCircle size={20} />
+            <a href="https://wa.me/261327105201" target="_blank" rel="noreferrer" className="social-icon" aria-label="WhatsApp">
+              <MessageCircle size={18} />
             </a>
           </div>
-        </nav>
 
-        <div className="header-actions" style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-          {/* Theme Toggle Button */}
-          <button 
-            onClick={toggleTheme} 
-            className="social-icon" 
-            aria-label="Toggle Theme"
-            style={{ cursor: 'pointer', border: 'none' }}
-          >
-            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+          {/* Theme Toggle */}
+          <button onClick={toggleTheme} className="theme-toggle" aria-label="Toggle Theme">
+            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
           </button>
 
-          {/* Mobile menu toggle */}
-          <button
-            className="mobile-toggle"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
+          {/* CTA */}
+          <a href="#contact" className="header-cta">Contact Me</a>
+        </nav>
+
+        {/* Mobile Controls */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <button onClick={toggleTheme} className="theme-toggle" aria-label="Toggle Theme" style={{ display: 'none' }}>
+            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+          <button className="mobile-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle Menu">
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -75,15 +73,16 @@ const Header = ({ theme, toggleTheme }) => {
         <ul className="mobile-nav-list">
           {navLinks.map((link) => (
             <li key={link.name}>
-              <a
-                href={link.href}
-                className="mobile-nav-link"
-                onClick={() => setIsMenuOpen(false)}
-              >
+              <a href={link.href} className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
                 {link.name}
               </a>
             </li>
           ))}
+          <li>
+            <button onClick={() => { toggleTheme(); setIsMenuOpen(false); }} className="mobile-nav-link" style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
+              {theme === 'dark' ? '☀ Light Mode' : '🌙 Dark Mode'}
+            </button>
+          </li>
         </ul>
       </div>
     </header>

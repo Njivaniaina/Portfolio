@@ -1,70 +1,31 @@
 import React from "react";
-import { ExternalLink, Github } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ArrowRight, ExternalLink, Github } from "lucide-react";
+import { projectsData } from "../data/projects";
 import "./Projects.css";
 
-const projectsData = [
-  {
-    id: 1,
-    title: "Fonds Patrimoniaux - Digital Library",
-    description:
-      "Development of the digital library platform for the University of Antananarivo's Heritage Funds (Fonds Patrimoniaux).",
-    image: "/projects/biblio.png",
-    tags: ["Web Development", "Digital Library", "Archives"],
-    liveUrl: "http://biblio.univ-antananarivo.mg/fonds-patrimoniaux",
-    githubUrl: "https://github.com/Njivaniaina/",
-  },
-  {
-    id: 2,
-    title: "Network Administration - MISA",
-    description:
-      "Network Administrator at MISA (Mathématiques, Informatique et Statistiques Appliquées), University of Antananarivo. Managed IT infrastructure and network security.",
-    image: "/projects/misa.png",
-    tags: ["SysAdmin", "Networking", "Infrastructure", "Security"],
-    liveUrl: "https://github.com/Njivaniaina/",
-    githubUrl: "https://github.com/Njivaniaina/",
-  },
-  {
-    id: 3,
-    title: "Science Faculty - Backup System",
-    description:
-      "Contributed to the development of an automated and secure backup system for the Faculty of Sciences (Siansa) website, ensuring data integrity.",
-    image: "/projects/siansa.png",
-    tags: ["DevOps", "Backup System", "Data Security"],
-    liveUrl: "https://siansa.univ-antananarivo.mg/",
-    githubUrl: "https://github.com/Njivaniaina/",
-  },
-  {
-    id: 4,
-    title: "E-Car - Car Marketplace",
-    description:
-      "Developed a full-featured e-commerce platform dedicated to car sales, featuring vehicle listings, search and filter functionality, and a seamless buying experience.",
-    image: "/projects/e-car.png",
-    tags: ["E-Commerce", "Laravel", "Admin"],
-    liveUrl: "https://github.com/Njivaniaina/e-car",
-    githubUrl: "https://github.com/Njivaniaina/e-car",
-  },
-  {
-    id: 5,
-    title: "Mini-Tech - E-Commerce Parts",
-    description:
-      "E-commerce platform for selling electronic parts, developed with Symfony. Features product management, cart, and checkout.",
-    image: "/projects/mini-tech.png",
-    tags: ["Symfony", "E-Commerce", "PHP", "Web Development"],
-    liveUrl: "https://github.com/Njivaniaina/mini-tech",
-    githubUrl: "https://github.com/Njivaniaina/mini-tech",
-  },
-];
+// Show only the last 3 projects on the homepage
+const PREVIEW_COUNT = 3;
+const previewProjects = projectsData.slice(-PREVIEW_COUNT);
 
 const Projects = () => {
   return (
     <section id="projects" className="section projects">
       <div className="container">
-        <h2 className="section-title">Featured Works</h2>
-        <p className="section-subtitle">A selection of my recent projects</p>
+        <div className="projects-header">
+          <span className="section-label">Portfolio</span>
+          <h2 className="section-title">My Latest Work</h2>
+          <p className="section-subtitle">A selection of my most recent projects</p>
+        </div>
 
         <div className="projects-grid">
-          {projectsData.map((project) => (
-            <div key={project.id} className="project-card glass-panel">
+          {previewProjects.map((project) => (
+            <Link
+              key={project.id}
+              to={`/projects/${project.id}`}
+              className="project-card"
+              style={{ textDecoration: "none" }}
+            >
               <div className="project-image-wrapper">
                 <img
                   src={project.image}
@@ -72,39 +33,32 @@ const Projects = () => {
                   className="project-image"
                 />
                 <div className="project-overlay">
-                  <div className="project-links">
-                    <a
-                      href={project.liveUrl}
-                      className="project-link"
-                      aria-label="View Live Site"
-                    >
-                      <ExternalLink size={20} />
-                    </a>
-                    <a
-                      href={project.githubUrl}
-                      className="project-link"
-                      aria-label="View Source"
-                    >
-                      <Github size={20} />
-                    </a>
-                  </div>
+                  <span className="project-link" style={{ pointerEvents: "none" }}>
+                    <ExternalLink size={18} />
+                  </span>
                 </div>
               </div>
 
               <div className="project-content">
                 <h3 className="project-title">{project.title}</h3>
-                <p className="project-description">{project.description}</p>
-
+                <p className="project-description">{project.shortDesc}</p>
                 <div className="project-tags">
-                  {project.tags.map((tag, index) => (
-                    <span key={index} className="tag">
+                  {project.tags.map((tag, i) => (
+                    <span key={i} className="tag">
                       {tag}
                     </span>
                   ))}
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
+        </div>
+
+        {/* See all projects CTA */}
+        <div className="projects-cta">
+          <Link to="/projects" className="btn btn-outline">
+            See All Projects <ArrowRight size={17} />
+          </Link>
         </div>
       </div>
     </section>

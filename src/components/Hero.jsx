@@ -1,82 +1,85 @@
 import React from 'react';
-import { ArrowRight, Download } from 'lucide-react';
+import { ArrowRight, Download, Play } from 'lucide-react';
 import './Hero.css';
 
 const Hero = () => {
   return (
     <section id="home" className="hero">
-      <div className="hero-background">
-        <div className="glow glow-1"></div>
-        <div className="glow glow-2"></div>
-      </div>
-      
+      {/* Subtle ambient blobs */}
+      <div className="hero-blob hero-blob-1" />
+      <div className="hero-blob hero-blob-2" />
+
       <div className="container hero-container">
+
+        {/* LEFT CONTENT */}
         <div className="hero-content">
-          <div className="hero-badge">
-            <span className="badge-dot"></span>
-            Available for new opportunities
+          <p className="hero-greeting">Hello I'm</p>
+          <h1 className="hero-name">Fenosoa<br/>Njivaniaina</h1>
+          <div className="hero-role">
+            <span className="gold-bar" />
+            Full Stack Developer &amp; DevOps Enthusiast
           </div>
-          
-          <h1 className="hero-title">
-            Full Stack <span>Developer</span> & DevOps Enthusiast
-          </h1>
-          
+
           <p className="hero-subtitle">
-            I craft end-to-end web applications and reliable infrastructures. From modern React frontends to robust Laravel/Django backends and CI/CD pipelines.
+            I craft end-to-end web applications and reliable infrastructures—modern React frontends, robust Laravel/Django backends, and CI/CD pipelines.
           </p>
-          
+
           <div className="hero-actions">
             <a href="#projects" className="btn btn-primary">
-              View Work <ArrowRight size={18} />
+              View Work <ArrowRight size={17} />
             </a>
-            <a href="/CV.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-outline" download>
-              Download CV <Download size={18} />
+            <a href="/CV.pdf" className="btn btn-outline" target="_blank" rel="noopener noreferrer" download>
+              <Download size={17} /> Download CV
             </a>
           </div>
-          
+
+          {/* Stats */}
           <div className="hero-stats">
             <div className="stat-item">
               <span className="stat-value">5+</span>
               <span className="stat-label">Projects<br/>Completed</span>
             </div>
-            <div className="stat-divider"></div>
+            <span className="stat-sep" />
             <div className="stat-item">
               <span className="stat-value">3+</span>
               <span className="stat-label">Tech<br/>Stacks</span>
             </div>
-            <div className="stat-divider"></div>
+            <span className="stat-sep" />
             <div className="stat-item">
               <span className="stat-value">100%</span>
               <span className="stat-label">Client<br/>Commitment</span>
             </div>
           </div>
         </div>
-        
+
+        {/* RIGHT – Photo in geometric frame */}
         <div className="hero-visual">
-          <div className="visual-wrapper glass-panel">
-            <div className="browser-mockup">
-              <div className="browser-header">
-                <span className="dot dot-red"></span>
-                <span className="dot dot-yellow"></span>
-                <span className="dot dot-green"></span>
-              </div>
-              <div className="browser-body">
-                <div className="code-block">
-                  <pre>
-                    <code>
-                      <span className="code-keyword">const</span> <span className="code-def">developer</span> = {'{'}
-                      <br/>  <span className="code-prop">name</span>: <span className="code-string">"MiniDev"</span>,
-                      <br/>  <span className="code-prop">role</span>: <span className="code-string">"Full Stack Dev"</span>,
-                      <br/>  <span className="code-prop">skills</span>: [<span className="code-string">"React"</span>, <span className="code-string">"NextJS"</span>, <span className="code-string">"Laravel"</span>, <span className="code-string">"Django"</span>, <span className="code-string">"Docker"</span>], 
-                      <br/>  <span className="code-prop">passion</span>: <span className="code-string">"Clean Code & DevOps"</span>
-                      <br/>{'}'};
-                    </code>
-                  </pre>
-                </div>
-              </div>
-            </div>
+          {/* Rotating ring */}
+          <div className="photo-ring" />
+
+          {/* Diamond clip */}
+          <div className="photo-diamond">
+            <img src="/me.jpg" alt="Fenosoa Njivaniaina" className="photo-img" />
+          </div>
+
+          {/* SVG triangle border overlay */}
+          <svg className="diamond-svg" viewBox="0 0 320 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon
+              points="160,10 310,340 10,340"
+              stroke="#c9a84c"
+              strokeWidth="1.5"
+              fill="none"
+              strokeDasharray="6 4"
+            />
+          </svg>
+
+          {/* Floating badge */}
+          <div className="hero-badge">
+            <span className="badge-dot" />
+            Available for opportunities
           </div>
         </div>
+
       </div>
     </section>
   );
