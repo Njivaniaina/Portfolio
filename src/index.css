@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap');
 
 /* ===== DARK THEME (DEFAULT) ===== */
 :root, [data-theme="dark"] {
@@ -20,7 +20,7 @@
   --glass-border: rgba(201, 168, 76, 0.14);
   --card-shadow:  rgba(0, 0, 0, 0.5);
 
-  --font-sans:    'Space Grotesk', system-ui, sans-serif;
+  --font-sans:    'Plus Jakarta Sans', system-ui, sans-serif;
   --font-display: 'Syne', sans-serif;
 
   --max-width:    1200px;

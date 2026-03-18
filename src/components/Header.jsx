@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Github, Linkedin, MessageCircle, Sun, Moon } from 'lucide-react';
+import Logo from './Logo';
 import './Header.css';
 
 const Header = ({ theme, toggleTheme }) => {
@@ -30,8 +31,11 @@ const Header = ({ theme, toggleTheme }) => {
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container header-content">
         {/* Logo — always goes to homepage root */}
-        <Link to="/" className="logo" onClick={closeMenu}>
-          Mini<span>Dev</span>
+        <Link to="/" className="logo-wrapper" onClick={closeMenu}>
+          <Logo size={32} className="logo-icon" />
+          <div className="logo-text">
+            Mini<span>Dev</span>
+          </div>
         </Link>
 
         {/* Desktop Navigation */}
