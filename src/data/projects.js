@@ -83,4 +83,22 @@ Key features: product catalog, category filtering, cart & checkout, user account
     year: "2026",
     role: "Full Stack Developer",
   },
+  {
+    id: "point-de-vente",
+    title: "Point of Sale – Supermarket",
+    shortDesc:
+      "Modern POS system for supermarkets similar to Odoo, with stock management and admin dashboard.",
+    fullDesc: `Developed a modern Point of Sale (POS) system tailored for supermarket operations, heavily inspired by Odoo's POS interface and functionality.
+The system features a fast, responsive touch-friendly interface for sales transactions, integrated with a local SQLite database for reliability and speed.
+
+Key features include real-time stock management, a comprehensive admin dashboard for sales analytics and inventory control, and advanced reporting capabilities. Built with Svelte and Tailwind CSS for a premium and efficient user experience.
+
+Technologies: Svelte, SQLite, Tailwind CSS, API-first architecture.`,
+    image: "/projects/Point_de_vente.png",
+    tags: ["Svelte", "SQLite", "Tailwind CSS", "POS", "Inventory Management"],
+    liveUrl: "https://github.com/Njivaniaina/point-de-vente",
+    githubUrl: "https://github.com/Njivaniaina/point-de-vente",
+    year: "2026",
+    role: "Full Stack Developer",
+  },
 ];
