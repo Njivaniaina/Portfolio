@@ -30,7 +30,7 @@
 /* Logo */
 .logo {
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: var(--text-primary);
   letter-spacing: 0.01em;
@@ -44,17 +44,17 @@
 .desktop-nav {
   display: flex;
   align-items: center;
-  gap: 2.5rem;
+  gap: 2rem;
 }
 
 .nav-list {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.75rem;
 }
 
 .nav-link {
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -87,15 +87,15 @@
 .social-links {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
 }
 
 .social-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   color: var(--text-secondary);
   transition: color var(--transition-fast), background-color var(--transition-fast);
@@ -108,15 +108,16 @@
 
 /* CTA button */
 .header-cta {
-  padding: 0.5rem 1.3rem;
+  padding: 0.45rem 1.1rem;
   border: 1.5px solid var(--accent);
   border-radius: var(--radius-sm);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--accent);
   transition: all var(--transition-normal);
+  white-space: nowrap;
 }
 
 .header-cta:hover {
@@ -129,12 +130,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   color: var(--text-secondary);
   transition: color var(--transition-fast), background-color var(--transition-fast);
   cursor: pointer;
+  background: none;
+  border: none;
 }
 
 .theme-toggle:hover {
@@ -142,14 +145,31 @@
   background-color: var(--accent-dim);
 }
 
+/* Mobile controls wrapper */
+.mobile-controls {
+  display: none;
+  align-items: center;
+  gap: 0.25rem;
+}
+
 /* Mobile toggle */
 .mobile-toggle {
-  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
   color: var(--text-primary);
   background: none;
   border: none;
   cursor: pointer;
   padding: 4px;
+  border-radius: 6px;
+  transition: background-color var(--transition-fast);
+}
+
+.mobile-toggle:hover {
+  background-color: var(--accent-dim);
 }
 
 /* Mobile Nav */
@@ -175,11 +195,11 @@
 .mobile-nav-list {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.1rem;
 }
 
 .mobile-nav-link {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 500;
   color: var(--text-secondary);
   letter-spacing: 0.06em;
@@ -187,12 +207,21 @@
   transition: color var(--transition-fast);
 }
 
-.mobile-nav-link:hover {
+.mobile-nav-link:hover,
+.mobile-nav-link:focus {
   color: var(--accent);
 }
 
-@media (max-width: 768px) {
-  .desktop-nav { display: none; }
-  .mobile-toggle { display: flex; }
-  .header-cta { display: none; }
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+@media (max-width: 900px) {
+  .desktop-nav   { display: none; }
+  .mobile-controls { display: flex; }
+}
+
+/* Prevent title overflow on very small screens */
+@media (max-width: 350px) {
+  .logo { font-size: 1.1rem; }
 }

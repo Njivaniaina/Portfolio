@@ -14,7 +14,7 @@ const Hero = () => {
         {/* LEFT CONTENT */}
         <div className="hero-content">
           <p className="hero-greeting">Hello I'm</p>
-          <h1 className="hero-name">Fenosoa<br/>Njivaniaina</h1>
+          <h1 className="hero-name">Fenosoa Njivaniaina</h1>
           <div className="hero-role">
             <span className="gold-bar" />
             Full Stack Developer &amp; DevOps Enthusiast

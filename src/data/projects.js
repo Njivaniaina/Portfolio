@@ -11,7 +11,7 @@ Responsible for the full IT infrastructure: LAN/WAN configuration, server mainte
 Key achievements include implementing a centralized monitoring system, reducing downtime by 40%, and enforcing security policies across all lab machines.`,
     image: "/projects/misa.png",
     tags: ["SysAdmin", "Networking", "Infrastructure", "Security"],
-    liveUrl: "https://github.com/Njivaniaina/",
+    liveUrl: "https://mit-ua.mg/",
     githubUrl: "https://github.com/Njivaniaina/",
     year: "2023",
     role: "Network Administrator",

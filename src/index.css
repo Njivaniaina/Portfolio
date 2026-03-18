@@ -200,6 +200,44 @@ img {
   margin: 0.5rem 0 1.5rem;
 }
 
+/* ===== BACKGROUND AMBIENT BLOBS ===== */
+.bg-blobs {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bg-blob {
+  position: absolute;
+  width: 40vw;
+  height: 40vw;
+  max-width: 500px;
+  max-height: 500px;
+  background: var(--accent);
+  filter: blur(80px);
+  opacity: 0.1;
+  border-radius: 50%;
+  animation: blobFloat 20s infinite alternate-reverse;
+}
+
+[data-theme="light"] .bg-blob {
+  opacity: 0.06;
+}
+
+.blob-1 { top: -10%; left: -10%; width: 60vw; height: 60vw; }
+.blob-2 { top: 20%; right: -5%; width: 40vw; height: 40vw; animation-delay: -5s; }
+.blob-3 { top: 60%; left: -5%; width: 35vw; height: 35vw; animation-delay: -10s; }
+.blob-4 { bottom: -10%; right: 10%; width: 50vw; height: 50vw; animation-delay: -15s; }
+.blob-5 { top: 10%; left: 40%; width: 30vw; height: 30vw; opacity: 0.05; }
+.blob-6 { bottom: 20%; left: 10%; width: 45vw; height: 45vw; animation-delay: -8s; }
+
+@keyframes blobFloat {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(50px, 100px) scale(1.1); }
+}
+
 @media (max-width: 768px) {
   .section { padding: 70px 0; }
   .section-title { font-size: 2rem; }

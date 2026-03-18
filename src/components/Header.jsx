@@ -1,10 +1,22 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Github, Linkedin, MessageCircle, Sun, Moon } from 'lucide-react';
 import './Header.css';
 
 const Header = ({ theme, toggleTheme }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+
+  // On homepage: use bare anchors for smooth scroll.
+  // On other pages: prefix with "/" so the browser navigates to homepage + scrolls.
+  const isHome = location.pathname === '/';
+  const href = (hash) => (isHome ? hash : `/${hash}`);
+
+  const navLinks = [
+    { name: 'Home',     hash: '#home' },
+    { name: 'Projects', hash: '#projects' },
+  ];
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -12,58 +24,56 @@ const Header = ({ theme, toggleTheme }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: 'Home',     href: '#home' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Contact',  href: '#contact' },
-  ];
+  const closeMenu = () => setIsMenuOpen(false);
 
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container header-content">
-        {/* Logo */}
-        <a href="#home" className="logo">
+        {/* Logo — always goes to homepage root */}
+        <Link to="/" className="logo" onClick={closeMenu}>
           Mini<span>Dev</span>
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="desktop-nav">
           <ul className="nav-list">
             {navLinks.map((link) => (
               <li key={link.name}>
-                <a href={link.href} className="nav-link">{link.name}</a>
+                <a href={href(link.hash)} className="nav-link">{link.name}</a>
               </li>
             ))}
           </ul>
 
           <div className="social-links">
             <a href="https://github.com/Njivaniaina" target="_blank" rel="noreferrer" className="social-icon" aria-label="GitHub">
-              <Github size={18} />
+              <Github size={17} />
             </a>
             <a href="https://www.linkedin.com/in/fenosoa-njivaniaina-razafindrakoto-a26206316" target="_blank" rel="noreferrer" className="social-icon" aria-label="LinkedIn">
-              <Linkedin size={18} />
+              <Linkedin size={17} />
             </a>
             <a href="https://wa.me/261327105201" target="_blank" rel="noreferrer" className="social-icon" aria-label="WhatsApp">
-              <MessageCircle size={18} />
+              <MessageCircle size={17} />
             </a>
           </div>
 
-          {/* Theme Toggle */}
           <button onClick={toggleTheme} className="theme-toggle" aria-label="Toggle Theme">
-            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+            {theme === 'dark' ? <Sun size={17} /> : <Moon size={17} />}
           </button>
 
-          {/* CTA */}
-          <a href="#contact" className="header-cta">Contact Me</a>
+          <a href={href('#contact')} className="header-cta">Contact Me</a>
         </nav>
 
         {/* Mobile Controls */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-          <button onClick={toggleTheme} className="theme-toggle" aria-label="Toggle Theme" style={{ display: 'none' }}>
+        <div className="mobile-controls">
+          <button onClick={toggleTheme} className="theme-toggle" aria-label="Toggle Theme">
             {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
           </button>
-          <button className="mobile-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle Menu">
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          <button
+            className="mobile-toggle"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+          >
+            {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </div>
@@ -73,15 +83,19 @@ const Header = ({ theme, toggleTheme }) => {
         <ul className="mobile-nav-list">
           {navLinks.map((link) => (
             <li key={link.name}>
-              <a href={link.href} className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
+              <a
+                href={href(link.hash)}
+                className="mobile-nav-link"
+                onClick={closeMenu}
+              >
                 {link.name}
               </a>
             </li>
           ))}
           <li>
-            <button onClick={() => { toggleTheme(); setIsMenuOpen(false); }} className="mobile-nav-link" style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
-              {theme === 'dark' ? '☀ Light Mode' : '🌙 Dark Mode'}
-            </button>
+            <a href={href('#contact')} className="mobile-nav-link" onClick={closeMenu}>
+              Contact Me
+            </a>
           </li>
         </ul>
       </div>
